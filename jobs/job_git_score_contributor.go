@@ -28,7 +28,6 @@ func GitScoreContributor(qc *que.Client, logger *log.Logger, job *que.Job, tx *p
 	ctx := context.Background()
 	client := github.NewClient(&http.Client{})
 	if os.Getenv("GITHUB_AUTH_TOKEN") != "" {
-		logger.Print("Using oauth")
 		ts := oauth2.StaticTokenSource(
 			&oauth2.Token{AccessToken: os.Getenv("GITHUB_AUTH_TOKEN")},
 		)
@@ -81,7 +80,7 @@ func recordGitContributor(qc *que.Client, logger *log.Logger, job *que.Job, tx *
 			sqlInsertOrg := `INSERT INTO git_contributors
 			(id, login, raw_description, score, avatar_url)
 			VALUES
-			($1::integer, $2::text, coalesce($3::json, '[]'::json), coalesce($4::smallint,100::smallint),  $5::text)`
+			($1::integer, $2::text, coalesce($3::json, '[]'::json), coalesce($4::smallint,100::smallint),  coalesce($5::text,'https://avatars3.githubusercontent.com/u/0?v=4' )`
 			_, err = tx.Exec(sqlInsertOrg,
 				*contrib.C.ID,
 				*contrib.C.Login,
@@ -105,7 +104,7 @@ func recordGitContributor(qc *que.Client, logger *log.Logger, job *que.Job, tx *
 			login = $1::text,
 			raw_description = coalesce($2::json, '[]'::json),
 			score   = coalesce($3::smallint,100::smallint),
-			avatar_url   = coalesce($4::text,""::text),
+			avatar_url   = coalesce($4::text,'https://avatars3.githubusercontent.com/u/0?v=4'),
 			last_updated = now()
 			WHERE id = $5::integer`
 	_, err = tx.Exec(sqlUpdateOrg,

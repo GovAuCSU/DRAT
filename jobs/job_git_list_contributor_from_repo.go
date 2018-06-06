@@ -24,7 +24,6 @@ func GitListContributorFromRepo(qc *que.Client, logger *log.Logger, job *que.Job
 	ctx := context.Background()
 	client := github.NewClient(&http.Client{})
 	if os.Getenv("GITHUB_AUTH_TOKEN") != "" {
-		logger.Print("Using oauth")
 		ts := oauth2.StaticTokenSource(
 			&oauth2.Token{AccessToken: os.Getenv("GITHUB_AUTH_TOKEN")},
 		)
