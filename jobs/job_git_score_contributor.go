@@ -79,7 +79,7 @@ func recordGitContributor(qc *que.Client, logger *log.Logger, job *que.Job, tx *
 	if err != nil {
 		if err == pgx.ErrNoRows { // If we receive no record, create a new one
 			sqlInsertOrg := `INSERT INTO git_contributors
-			(id, login, raw_description, score, avatar_url, location)
+			(id, login, raw_description, score, avatar_url)
 			VALUES
 			($1::integer, $2::text, coalesce($3::json, '[]'::json), coalesce($4::smallint,100::smallint),  $5::text)`
 			_, err = tx.Exec(sqlInsertOrg,
