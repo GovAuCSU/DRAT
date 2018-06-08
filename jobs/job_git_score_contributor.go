@@ -19,9 +19,9 @@ const (
 )
 
 type Contributor struct {
-	C       *github.Contributor
-	Repo_ID int
-	Score   int
+	C      *github.Contributor
+	RepoID int
+	Score  int
 }
 
 func GitScoreContributor(qc *que.Client, logger *log.Logger, job *que.Job, tx *pgx.Tx) error {
@@ -80,7 +80,7 @@ func recordGitContributor(qc *que.Client, logger *log.Logger, job *que.Job, tx *
 			sqlInsertOrg := `INSERT INTO git_contributors
 			(id, login, raw_description, score, avatar_url)
 			VALUES
-			($1::integer, $2::text, coalesce($3::json, '[]'::json), coalesce($4::smallint,100::smallint),  coalesce($5::text,'https://avatars3.githubusercontent.com/u/0?v=4' )`
+			($1::integer, $2::text, coalesce($3::json, '[]'::json), coalesce($4::smallint,100::smallint),  coalesce($5::text,'https://avatars3.githubusercontent.com/u/0?v=4'::text))`
 			_, err = tx.Exec(sqlInsertOrg,
 				*contrib.C.ID,
 				*contrib.C.Login,
@@ -127,7 +127,7 @@ func recordGitContributor(qc *que.Client, logger *log.Logger, job *que.Job, tx *
 func recordContributorRelation(logger *log.Logger, job *que.Job, tx *pgx.Tx, contrib Contributor) error {
 	var lastUpdate time.Time
 	// Check if the repository is already in our database
-	err := tx.QueryRow("SELECT added_at FROM git_repository_to_contributor WHERE repository_id = $1 AND contributor_id = $2", contrib.Repo_ID, *contrib.C.ID).Scan(&lastUpdate)
+	err := tx.QueryRow("SELECT added_at FROM git_repository_to_contributor WHERE repository_id = $1 AND contributor_id = $2", contrib.RepoID, *contrib.C.ID).Scan(&lastUpdate)
 	if err != nil {
 		if err == pgx.ErrNoRows { // If we receive no record, create a new one
 			sqlInsertOrg := `INSERT INTO git_repository_to_contributor
@@ -135,7 +135,7 @@ func recordContributorRelation(logger *log.Logger, job *que.Job, tx *pgx.Tx, con
 			VALUES
 			($1::integer, $2::integer)`
 			_, err = tx.Exec(sqlInsertOrg,
-				contrib.Repo_ID,
+				contrib.RepoID,
 				*contrib.C.ID)
 			if err != nil {
 				return err

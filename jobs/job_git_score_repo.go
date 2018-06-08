@@ -20,10 +20,10 @@ const (
 )
 
 type Repository struct {
-	R         *github.Repository
-	Org_ID    int
-	Parent_ID int
-	Score     int
+	R        *github.Repository
+	OrgID    int
+	ParentID int
+	Score    int
 }
 
 // GitScoreRepository: Our scoring function
@@ -125,16 +125,16 @@ func recordGitRepository(qc *que.Client, logger *log.Logger, job *que.Job, tx *p
 
 func recordGitRelation(logger *log.Logger, job *que.Job, tx *pgx.Tx, repo Repository) error {
 	// If this repository was acquired from crawling
-	fmt.Println(repo.Org_ID)
-	if repo.Org_ID != -1 {
+	fmt.Println(repo.OrgID)
+	if repo.OrgID != -1 {
 		// Add org to repo relationship
 		err := recordGitOrgToRepository(logger, job, tx, repo)
 		if err != nil {
 			return err
 		}
 	}
-	fmt.Println(repo.Parent_ID)
-	if repo.Parent_ID != -1 {
+	fmt.Println(repo.ParentID)
+	if repo.ParentID != -1 {
 		// Add relationship between repository and its dependencies
 		err := recordGitRepositoryToDependency(logger, job, tx, repo)
 		if err != nil {
@@ -147,15 +147,15 @@ func recordGitRelation(logger *log.Logger, job *que.Job, tx *pgx.Tx, repo Reposi
 func recordGitOrgToRepository(logger *log.Logger, job *que.Job, tx *pgx.Tx, repo Repository) error {
 	var lastUpdate time.Time
 	// Check if the repository is already in our database
-	err := tx.QueryRow("SELECT added_at FROM git_org_to_repository WHERE org_id = $1 AND repository_id = $2", repo.Org_ID, *repo.R.ID).Scan(&lastUpdate)
+	err := tx.QueryRow("SELECT added_at FROM git_org_to_repository WHERE organisation_id = $1 AND repository_id = $2", repo.OrgID, *repo.R.ID).Scan(&lastUpdate)
 	if err != nil {
 		if err == pgx.ErrNoRows { // If we receive no record, create a new one
 			sqlInsertOrg := `INSERT INTO git_org_to_repository
-			(org_id, repository_id)
+			(organisation_id, repository_id)
 			VALUES
 			($1::integer, $2::integer)`
 			_, err = tx.Exec(sqlInsertOrg,
-				repo.Org_ID,
+				repo.OrgID,
 				*repo.R.ID)
 			if err != nil {
 				return err
@@ -171,7 +171,7 @@ func recordGitOrgToRepository(logger *log.Logger, job *que.Job, tx *pgx.Tx, repo
 func recordGitRepositoryToDependency(logger *log.Logger, job *que.Job, tx *pgx.Tx, repo Repository) error {
 	var lastUpdate time.Time
 	// Check if the repository is already in our database
-	err := tx.QueryRow("SELECT added_at FROM git_repository_to_dependency WHERE repository_id = $1 AND dependency_id = $2", repo.Parent_ID, *repo.R.ID).Scan(&lastUpdate)
+	err := tx.QueryRow("SELECT added_at FROM git_repository_to_dependency WHERE repository_id = $1 AND dependency_id = $2", repo.ParentID, *repo.R.ID).Scan(&lastUpdate)
 	if err != nil {
 		if err == pgx.ErrNoRows { // If we receive no record, create a new one
 			sqlInsertOrg := `INSERT INTO git_repository_to_dependency
@@ -179,7 +179,7 @@ func recordGitRepositoryToDependency(logger *log.Logger, job *que.Job, tx *pgx.T
 			VALUES
 			($1::integer, $2::integer)`
 			_, err = tx.Exec(sqlInsertOrg,
-				repo.Parent_ID,
+				repo.ParentID,
 				*repo.R.ID)
 			if err != nil {
 				return err

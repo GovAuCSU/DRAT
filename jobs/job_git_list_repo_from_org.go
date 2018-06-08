@@ -71,7 +71,7 @@ func GitListRepoFromOrg(qc *que.Client, logger *log.Logger, job *que.Job, tx *pg
 
 	// Sending repository scoring job to the queue
 	for _, r := range allRepos {
-		jobarguments := Repository{R: r, Org_ID: *orgdetails.ID, Parent_ID: -1, Score: 100} // Default all repository start with 100 credit points
+		jobarguments := Repository{R: r, OrgID: *orgdetails.ID, ParentID: -1, Score: 100} // Default all repository start with 100 credit points
 		jarg, err := json.Marshal(jobarguments)
 		if err != nil {
 			return err

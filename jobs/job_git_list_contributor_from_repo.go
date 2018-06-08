@@ -52,9 +52,9 @@ func GitListContributorFromRepo(qc *que.Client, logger *log.Logger, job *que.Job
 		}
 		opt.Page = resp.NextPage
 	}
-	// For every contributor, we are queueing a new job to store the record and score the profile
+	// For every contributor, `we are queueing a new job to store the record and score the profile
 	for _, c := range allContributors {
-		jobarguments := Contributor{C: c, Repo_ID: *repo.R.ID, Score: 100} // Default all repository start with 100 credit points
+		jobarguments := Contributor{C: c, RepoID: *repo.R.ID, Score: 100} // Default all repository start with 100 credit points
 		jarg, err := json.Marshal(jobarguments)
 		if err != nil {
 			return err

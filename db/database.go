@@ -127,8 +127,8 @@ func GetPGXPool(maxConns int) (*pgx.ConnPool, error) {
 
 				CREATE TABLE IF NOT EXISTS git_organisations (
 					id 					   integer	               NOT NULL,
-					login				   text					   NOT NULL,
 					name    	           text					   NOT NULL,
+					login				   text					   NOT NULL,
 					avatar_url			   text					   NOT NULL DEFAULT ''::text,
 					raw_description        json                    NOT NULL DEFAULT '[]'::json,
 					added_at               timestamptz             NOT NULL DEFAULT now(),
@@ -137,7 +137,7 @@ func GetPGXPool(maxConns int) (*pgx.ConnPool, error) {
 					
 				CREATE TABLE IF NOT EXISTS git_repositories (
 					id 					   integer	               NOT NULL,
-					full_name	           text					   NOT NULL,
+					full_name    	           text					   NOT NULL,
 					raw_description        json                    NOT NULL DEFAULT '[]'::json,
 					score                  smallint                NOT NULL DEFAULT 100,
 					added_at               timestamptz             NOT NULL DEFAULT now(),   
@@ -169,7 +169,7 @@ func GetPGXPool(maxConns int) (*pgx.ConnPool, error) {
 				);
 
 				CREATE TABLE IF NOT EXISTS git_org_to_repository (
-					org_id                 integer          NOT NULL,
+					organisation_id                 integer          NOT NULL,
 					repository_id          integer          NOT NULL,
 					active                 boolean          DEFAULT TRUE,
 					added_at     timestamptz   NOT NULL DEFAULT now()
