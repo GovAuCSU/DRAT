@@ -18,10 +18,6 @@ const (
 	KeyGitListContributorFromRepo = "git_list_contributor_from_repo"
 )
 
-func GetGitClient() {
-	
-}
-
 // GitListContributorFromRepo is a jobfunc to acquire the list of contributors from a repository.
 func GitListContributorFromRepo(qc *que.Client, logger *log.Logger, job *que.Job, tx *pgx.Tx) error {
 	// Prepare a github API client
