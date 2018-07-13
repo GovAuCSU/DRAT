@@ -1,4 +1,5 @@
 FROM alpine:latest
+RUN apk --no-cache add ca-certificates
 COPY cmd/web/static /static
 COPY bin/web /
 COPY scripts/web.sh /run.sh
