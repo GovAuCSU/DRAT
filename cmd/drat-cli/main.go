@@ -105,6 +105,7 @@ func main() {
 	fmt.Println(string(b))
 }
 
+// TODO: Find home for result handler. :)
 type Result interface {
 	String() string
 }
