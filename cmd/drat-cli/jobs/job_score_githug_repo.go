@@ -2,6 +2,7 @@ package jobs
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"log"
 	"strings"
@@ -36,6 +37,24 @@ func ScoreGitHubRepo(logger *log.Logger, qc *cque.Client, j *cque.Job, appconfig
 	}
 }
 
+// ScoreGitHubRepoFuncResult is the type of result that would return from our ScoreGithubRepo function.
+type ScoreGitHubRepoFuncResult struct {
+	Ownername    string
+	Name         string
+	URL          string
+	Dependencies []string
+	RiskNotes    []string
+}
+
+// For every result type, we will need to implement String() method to satisfy our Result interface.
+func (sr *ScoreGitHubRepoFuncResult) String() string {
+	b, err := json.Marshal(sr)
+	if err != nil {
+		return ""
+	}
+	return string(b)
+}
+
 func ScoreGitHubRepoFunc(logger *log.Logger, qc *cque.Client, j *cque.Job, appconfig map[string]interface{}) error {
 	repojob := j.Args.(RepoJob)
 	repofullurlparts := strings.Split(repojob.fullname, "/")
@@ -53,9 +72,26 @@ func ScoreGitHubRepoFunc(logger *log.Logger, qc *cque.Client, j *cque.Job, appco
 		return fmt.Errorf("Failed to get information about repository %s/%s", owner, reponame)
 	}
 	rs := score.NewGithubRepositoryScore(c, repo)
-	rs.Score(context.Background())
+	err = rs.Score(context.Background())
+	if err != nil {
+		return err
+	}
+
+	sr := ScoreGitHubRepoFuncResult{
+		Ownername:    *rs.R.Owner.Login,
+		Name:         *rs.R.Name,
+		URL:          *rs.R.URL,
+		Dependencies: []string{},
+		RiskNotes:    rs.RiskNote,
+	}
+
 	// fmt.Printf("Repo score: \n %v \n", rs)
 	lst, err := crawl.GithubDependencyCrawl(logger, c, repo, appconfig)
+	sr.Dependencies = lst
+	qc.Result <- cque.Result{
+		JobType: j.Type,
+		Result:  sr,
+	}
 	if err != nil {
 		return err
 	}

@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"net/http"
-	"os"
 
 	github "github.com/google/go-github/github"
 	"golang.org/x/oauth2"
@@ -26,11 +25,10 @@ func GetConn(config map[string]interface{}) (c *github.Client, err error) {
 	err = nil
 	ctx := context.Background()
 	c = github.NewClient(&http.Client{})
-	if os.Getenv(config["gitauthtoken"].(string)) != "" {
+	if config["gitauthtoken"].(string) != "" {
 		ts := oauth2.StaticTokenSource(
-			&oauth2.Token{AccessToken: os.Getenv("GITHUB_AUTH_TOKEN")},
+			&oauth2.Token{AccessToken: config["gitauthtoken"].(string)},
 		)
-
 		tc := oauth2.NewClient(ctx, ts)
 		c = github.NewClient(tc)
 	}

@@ -2,6 +2,8 @@ package main
 
 import (
 	"context"
+	"encoding/json"
+	"fmt"
 	"log"
 	"os"
 	"time"
@@ -77,8 +79,57 @@ func main() {
 	}
 
 	time.Sleep(2 * time.Second)
-	for !qc.IsQueueEmpty {
-		time.Sleep(2 * time.Second)
+	rh := ResultHandler{
+		WaitForResult: true,
+		WaitTimeStart: time.Now(),
+		qc:            qc,
+		ctx:           ctx,
+	}
+	go rh.Run()
+	running := true
+	for running {
+		// If we have been waiting for result for more than 1s.
+		if rh.WaitForResult && (time.Since(rh.WaitTimeStart) > (time.Duration(2) * time.Second)) {
+			shouldnotrunning := qc.IsQueueEmpty && rh.WaitForResult
+			running = !shouldnotrunning
+		} else {
+			running = true
+		}
 		// when queue is not empty we loop mainthread.
+		time.Sleep(1 * time.Second)
+	}
+	b, err := json.Marshal(rh.Results)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(string(b))
+}
+
+type Result interface {
+	String() string
+}
+
+type ResultHandler struct {
+	// Interval is the amount of time that this Worker should sleep before trying
+	// to find another Job.
+	WaitForResult bool
+	WaitTimeStart time.Time
+	Results       []Result
+	qc            *cque.Client
+	ctx           context.Context
+}
+
+func (rh *ResultHandler) Run() {
+	for {
+		rh.WaitForResult = true
+		rh.WaitTimeStart = time.Now()
+		select {
+		case <-rh.ctx.Done():
+			log.Printf("[DEBUG] Result Handler is done\n")
+			return
+		case r := <-rh.qc.Result:
+			result := r.Result.(jobs.ScoreGitHubRepoFuncResult)
+			rh.Results = append(rh.Results, &result)
+		}
 	}
 }
