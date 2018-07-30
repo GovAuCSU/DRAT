@@ -11,8 +11,8 @@ import (
 
 	"github.com/bgentry/que-go"
 
-	"github.com/GovAUCSU/drat/db"
-	"github.com/GovAUCSU/drat/jobs"
+	"github.com/GovAUCSU/drat/cmd/drat/db"
+	"github.com/GovAUCSU/drat/cmd/drat/jobs"
 )
 
 // Declare how many threads you want per instance.
