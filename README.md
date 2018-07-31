@@ -81,8 +81,7 @@ Here is an example of the app's output:
 ]
 ```
 
-For this alpha build, the app only has one crawl plugin to look for Go-Dep file and extract dependency at the moment.
-
+This app currently support 3 types of crawler plugins for github projects: NPM, go-dep and ruby-gem
 
 ## DRAT Webapp
 Development for this app is currently on hold in favour of the drat-cli tool.
