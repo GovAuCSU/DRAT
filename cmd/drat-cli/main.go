@@ -98,7 +98,7 @@ func main() {
 		// when queue is not empty we loop mainthread.
 		time.Sleep(1 * time.Second)
 	}
-	b, err := json.Marshal(rh.Results)
+	b, err := json.MarshalIndent(rh.Results, "", "  ")
 	if err != nil {
 		log.Fatal(err)
 	}
