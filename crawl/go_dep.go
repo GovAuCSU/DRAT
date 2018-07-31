@@ -4,7 +4,8 @@ import (
 	"regexp"
 )
 
-func ParseGoDep(gopkgfile string) []string {
+func ParseGoDep(contentbytes []byte) []string {
+	gopkgfile := string(contentbytes)
 	// Matching something like `name = "github.com/beorn7/perks"`
 	rex := regexp.MustCompile(`name = \"([^\"]+/[^\"]+/[^\"]+)\"`)
 	out := rex.FindAllStringSubmatch(gopkgfile, -1)

@@ -85,15 +85,11 @@ func ScoreGitHubRepoFunc(logger *log.Logger, qc *cque.Client, j *cque.Job, appco
 		RiskNotes:    rs.RiskNote,
 	}
 
-	// fmt.Printf("Repo score: \n %v \n", rs)
-	lst, err := crawl.GithubDependencyCrawl(logger, c, repo, appconfig)
+	lst := crawl.GithubDependencyCrawl(logger, c, repo, appconfig)
 	sr.Dependencies = lst
 	qc.Result <- cque.Result{
 		JobType: j.Type,
 		Result:  sr,
-	}
-	if err != nil {
-		return err
 	}
 	for _, v := range lst {
 		if strings.Contains(v, "github.com") {
