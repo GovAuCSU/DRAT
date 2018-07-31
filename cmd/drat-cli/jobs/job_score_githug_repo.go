@@ -57,7 +57,7 @@ func (sr *ScoreGitHubRepoFuncResult) String() string {
 
 func ScoreGitHubRepoFunc(logger *log.Logger, qc *cque.Client, j *cque.Job, appconfig map[string]interface{}) error {
 	repojob := j.Args.(RepoJob)
-	repofullurlparts := strings.Split(repojob.fullname, "/")
+	repofullurlparts := strings.Split(repojob.Fullname, "/")
 	reponame := repofullurlparts[len(repofullurlparts)-1]
 	owner := repofullurlparts[len(repofullurlparts)-2]
 	c, err := GetConn(appconfig)
@@ -96,7 +96,7 @@ func ScoreGitHubRepoFunc(logger *log.Logger, qc *cque.Client, j *cque.Job, appco
 			logger.Printf("[INFO] Queue scoring job for \"%s\" found in repo %s/%s\n", v, *repo.Owner.Login, *repo.Name)
 			qc.Enqueue(cque.Job{
 				Type: KeyScoreGitHubRepo,
-				Args: RepoJob{fullname: v, currentdepth: repojob.currentdepth + 1},
+				Args: RepoJob{Fullname: v, Currentdepth: repojob.Currentdepth + 1},
 			})
 			continue
 		}

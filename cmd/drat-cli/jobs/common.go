@@ -10,16 +10,16 @@ import (
 )
 
 type RepoJob struct {
-	fullname     string
-	currentdepth int
+	Fullname     string
+	Currentdepth int
 }
 
 // Check if crawl limit is reached, if it does, return a customed errorcode.
 func IsCrawlLimitReach(repojob RepoJob, appconfig map[string]interface{}) error {
-	if repojob.currentdepth < appconfig["depth"].(int) {
+	if repojob.Currentdepth < appconfig["depth"].(int) {
 		return nil
 	}
-	return fmt.Errorf("Crawl limit reachs at %s", repojob.fullname)
+	return fmt.Errorf("Crawl limit reachs at %s", repojob.Fullname)
 }
 func GetConn(config map[string]interface{}) (c *github.Client, err error) {
 	err = nil

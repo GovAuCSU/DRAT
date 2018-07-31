@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/GovAuCSU/drat/cmd/drat-cli/jobs"
+	"github.com/GovAuCSU/DRAT/cmd/drat-cli/jobs"
 	"github.com/santrancisco/cque"
 	"github.com/santrancisco/logutils"
 	"gopkg.in/alecthomas/kingpin.v2"
@@ -20,7 +20,7 @@ var (
 	file         = kingpin.Flag("file", "File contains the list of urls to repositories seperated by newlines").Default("").Short('f').String()
 	gitauthtoken = kingpin.Flag("gitauth", "Github Authentication token").Default("").OverrideDefaultFromEnvar("GITHUB_AUTH_TOKEN").String()
 	depth        = kingpin.Flag("depth", "How deep do we want to crawl the dependencies").Default("5").Short('d').Int()
-	sqlitedbpath = kingpin.Flag("sqlpath", "Local sqlite cache location. Default is ~/.drat.sqlite").Default("~/.drat.sqlite").Short('s').String()
+	// sqlitedbpath = kingpin.Flag("sqlpath", "Local sqlite cache location. Default is ~/.drat.sqlite").Default("~/.drat.sqlite").Short('s').String()
 )
 
 const (
@@ -35,15 +35,15 @@ func main() {
 	config := map[string]interface{}{}
 	config["depth"] = *depth
 	config["gitauthtoken"] = *gitauthtoken
-	config["sqlitedbpath"] = *sqlitedbpath
+	// config["sqlitedbpath"] = *sqlitedbpath
 
 	// Configuring our log level
-	logfilter := "ERROR"
+	logfilter := "WARNING"
 	if *verbose {
 		logfilter = "DEBUG"
 	}
 	filteroutput := &logutils.LevelFilter{
-		Levels:   []logutils.LogLevel{"DEBUG", "INFO", "WARNING", "ERROR"},
+		Levels:   []logutils.LogLevel{"DEBUG", "WARNING", "INFO", "ERROR"},
 		MinLevel: logutils.LogLevel(logfilter),
 		Writer:   os.Stderr,
 	}
@@ -75,7 +75,10 @@ func main() {
 	}
 
 	if *repo != "" {
-		qc.Enqueue(cque.Job{Type: jobs.KeyListFromFile, Args: *file})
+		qc.Enqueue(cque.Job{
+			Type: jobs.KeyScoreGitHubRepo,
+			Args: jobs.RepoJob{Fullname: *repo, Currentdepth: 0},
+		})
 	}
 
 	time.Sleep(2 * time.Second)
