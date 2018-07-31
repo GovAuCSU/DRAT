@@ -39,6 +39,9 @@ func ParseNPM(contentbytes []byte) []string {
 		if err != nil {
 			continue
 		}
+		if resp.StatusCode != 200 {
+			continue
+		}
 		b, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
 			continue

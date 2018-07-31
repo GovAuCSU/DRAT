@@ -15,6 +15,7 @@ func GithubDependencyCrawl(logger *log.Logger, c *github.Client, r *github.Repos
 	supportfiles := make(map[string]ParserFunc)
 	supportfiles["Gopkg.lock"] = ParseGoDep
 	supportfiles["package.json"] = ParseNPM
+	supportfiles["Gemfile"] = ParseGem
 
 	var listOfDependencies []string
 	for filename, PF := range supportfiles {
