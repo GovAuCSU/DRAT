@@ -11,9 +11,27 @@ import (
 
 // "https://raw.githubusercontent.com/%s/%s/master/%s",owner,repository,filename
 
-func GithubDependencyCrawl(logger *log.Logger, c *github.Client, r *github.Repository, config interface{}) ([]string, error) {
-	filename := "Gopkg.lock"
+func GithubDependencyCrawl(logger *log.Logger, c *github.Client, r *github.Repository, config interface{}) []string {
+	supportfiles := make(map[string]ParserFunc)
+	supportfiles["Gopkg.lock"] = ParseGoDep
+	supportfiles["package.json"] = ParseNPM
+
 	var listOfDependencies []string
+	for filename, PF := range supportfiles {
+		dependencies, err := GetFileAndParseResult(filename, PF, logger, c, r, config)
+		if err != nil {
+			continue
+		}
+		if len(dependencies) > 0 {
+			listOfDependencies = append(listOfDependencies, dependencies...)
+		}
+	}
+	return listOfDependencies
+}
+
+type ParserFunc func(filecontent []byte) []string
+
+func GetFileAndParseResult(filename string, PF ParserFunc, logger *log.Logger, c *github.Client, r *github.Repository, config interface{}) ([]string, error) {
 	resp, err := http.Get(fmt.Sprintf("https://raw.githubusercontent.com/%s/%s/master/%s", *r.Owner.Login, *r.Name, filename))
 	if err != nil {
 		return nil, err
@@ -24,9 +42,7 @@ func GithubDependencyCrawl(logger *log.Logger, c *github.Client, r *github.Repos
 		if err != nil {
 			return nil, err
 		}
-		content := string(contentbytes)
-		listOfDependencies = append(listOfDependencies, ParseGoDep(content)...)
-
+		return PF(contentbytes), nil
 	}
-	return listOfDependencies, nil
+	return []string{}, nil
 }
