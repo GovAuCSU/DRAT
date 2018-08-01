@@ -4,7 +4,11 @@ DRAT aims to provide risk indicator for libraries used by the developer within a
 
 
 ## DRAT-cli
-The app can be found under cmd/drat-cli. To check out how it works, you can try running it with the following commands
+The app can be found under cmd/drat-cli. 
+
+To run the app, you will need a github auth token to overcome the rate limit for github api. This token can be generated [here](https://github.com/settings/tokens). 
+
+To check out how it works, you can try running it with the following commands
 
 ```bash
 cd cmd/drat-cli
