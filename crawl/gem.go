@@ -17,7 +17,7 @@ type geminfo struct {
 	Source_code_uri string `json:"source_code_uri"`
 }
 
-func ParseGem(contentbytes []byte) []string {
+func ParseGem(contentbytes []byte) ([]string, []Dependencyproblem) {
 	var retlst []string
 	content := string(contentbytes)
 	rex := regexp.MustCompile(`gem \'([^\']+)\'`)
@@ -47,5 +47,5 @@ func ParseGem(contentbytes []byte) []string {
 		}
 
 	}
-	return retlst
+	return retlst, nil
 }

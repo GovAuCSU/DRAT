@@ -1,0 +1,1400 @@
+[
+  {
+    "Ownername": "AusDTO",
+    "Name": "dto-digitalmarketplace-supplier-frontend",
+    "URL": "https://api.github.com/repos/AusDTO/dto-digitalmarketplace-supplier-frontend",
+    "Dependencies": [
+      "git://github.com/hparra/gulp-rename",
+      "git://github.com/floridoo/gulp-sourcemaps",
+      "https://github.com/terinjokes/gulp-uglify",
+      "https://github.com/bower/bower",
+      "https://github.com/sindresorhus/del",
+      "https://github.com/gulpjs/gulp",
+      "https://github.com/dflynn15/gulp-jasmine-phantom",
+      "https://github.com/govau/uikit",
+      "ssh://git@github.com/Marak/colors.js",
+      "git://github.com/alphagov/govuk_frontend_toolkit_npm",
+      "git://github.com/OverZealous/run-sequence",
+      "https://github.com/sasstools/gulp-sass-lint",
+      "ssh://git@github.com/akoenig/gulp-svg2png",
+      "https://github.com/govau/pancake",
+      "git://github.com/BlessCSS/gulp-bless",
+      "git://github.com/wiledal/gulp-include",
+      "git://github.com/dlmanning/gulp-sass",
+      "https://github.com/sindresorhus/gulp-autoprefixer",
+      "git://github.com/adamayres/gulp-filelog",
+      "https://github.com/sun-zheng-an/gulp-shell",
+      "git://github.com/Medium/phantomjs",
+      "https://github.com/AusDTO/dto-digitalmarketplace-apiclient",
+      "https://github.com/AusDTO/dto-digitalmarketplace-content-loader",
+      "https://github.com/AusDTO/dto-digitalmarketplace-utils",
+      "github.com/ActiveState/appdirs",
+      "github.com/repos/neithere/argh",
+      "github.com/litl/backoff",
+      "github.com/repos/boto/boto",
+      "github.com/boto/boto3",
+      "github.com/boto/botocore",
+      "github.com/mitsuhiko/click",
+      "github.com/pyca/cryptography",
+      "github.com/scrapy/cssselect",
+      "bitbucket.org/stoneleaf/enum34",
+      "github.com/pallets/flask",
+      "github.com/thadeusb/flask-cache",
+      "github.com/maxcountryman/flask-login",
+      "github.com/smurfix/flask-script",
+      "github.com/spulec/freezegun",
+      "github.com/kjd/idna",
+      "github.com/jpvanhal/inflection",
+      "github.com/phihag/ipaddress",
+      "github.com/mitsuhiko/itsdangerous",
+      "github.com/lxml/lxml",
+      "github.com/pallets/markupsafe",
+      "github.com/atdt/monotonic",
+      "github.com/pypa/packaging",
+      "github.com/gorakhargosh/pathtools",
+      "github.com/PyCQA/pycodestyle",
+      "github.com/pytest-dev/py",
+      "github.com/etingof/pyasn1",
+      "github.com/eliben/pycparser",
+      "github.com/madzak/python-json-logger",
+      "github.com/stub42/pytz",
+      "github.com/sdispater/pytzdata",
+      "github.com/requests/requests",
+      "github.com/boto/s3transfer",
+      "github.com/benjaminp/six",
+      "github.com/regebro/tzlocal",
+      "github.com/Pylons/waitress",
+      "github.com/gorakhargosh/watchdog",
+      "github.com/pallets/werkzeug",
+      "github.com/ogt/workdays",
+      "github.com/wtforms/wtforms"
+    ],
+    "Dependenciesproblems": [
+      {
+        "Name": "blinker",
+        "URL": "https://pypi.org/project/blinker",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "cffi",
+        "URL": "https://pypi.org/project/cffi",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "click",
+        "URL": "https://pypi.org/project/click",
+        "RiskNotes": [
+          "[MEDIUM] This project does not have a description on Pypi"
+        ]
+      },
+      {
+        "Name": "contextlib2",
+        "URL": "https://pypi.org/project/contextlib2",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "docutils",
+        "URL": "https://pypi.org/project/docutils",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "Flask-FeatureFlags",
+        "URL": "https://pypi.org/project/Flask-FeatureFlags",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "freezegun",
+        "URL": "https://pypi.org/project/freezegun",
+        "RiskNotes": [
+          "[MEDIUM] This project does not have a description on Pypi"
+        ]
+      },
+      {
+        "Name": "funcsigs",
+        "URL": "https://pypi.org/project/funcsigs",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "futures",
+        "URL": "https://pypi.org/project/futures",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "Jinja2",
+        "URL": "https://pypi.org/project/Jinja2",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "jmespath",
+        "URL": "https://pypi.org/project/jmespath",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "Markdown",
+        "URL": "https://pypi.org/project/Markdown",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "newrelic",
+        "URL": "https://pypi.org/project/newrelic",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "nose",
+        "URL": "https://pypi.org/project/nose",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "pbr",
+        "URL": "https://pypi.org/project/pbr",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "pendulum",
+        "URL": "https://pypi.org/project/pendulum",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "pyparsing",
+        "URL": "https://pypi.org/project/pyparsing",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "python-dateutil",
+        "URL": "https://pypi.org/project/python-dateutil",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "python-json-logger",
+        "URL": "https://pypi.org/project/python-json-logger",
+        "RiskNotes": [
+          "[MEDIUM] This project does not have a description on Pypi"
+        ]
+      },
+      {
+        "Name": "PyYAML",
+        "URL": "https://pypi.org/project/PyYAML",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "rollbar",
+        "URL": "https://pypi.org/project/rollbar",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "termcolor",
+        "URL": "https://pypi.org/project/termcolor",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      }
+    ],
+    "RiskNotes": [
+      "[MEDIUM] This repository was forked from alphagov/digitalmarketplace-supplier-frontend",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "hparra",
+    "Name": "gulp-rename",
+    "URL": "https://api.github.com/repos/hparra/gulp-rename",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 64 times",
+      "[GOOD] Repository has been stared 612 times",
+      "[GOOD] Repository is being watched by 612 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "sindresorhus",
+    "Name": "del",
+    "URL": "https://api.github.com/repos/sindresorhus/del",
+    "Dependencies": [
+      "https://github.com/sindresorhus/is-path-in-cwd",
+      "https://github.com/sindresorhus/p-map",
+      "https://github.com/sindresorhus/pify",
+      "git://github.com/isaacs/rimraf",
+      "https://github.com/sindresorhus/globby",
+      "https://github.com/sindresorhus/is-path-cwd"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 36 times",
+      "[GOOD] Repository has been stared 837 times",
+      "[GOOD] Repository is being watched by 837 people"
+    ]
+  },
+  {
+    "Ownername": "terinjokes",
+    "Name": "gulp-uglify",
+    "URL": "https://api.github.com/repos/terinjokes/gulp-uglify",
+    "Dependencies": [
+      "https://github.com/mishoo/UglifyJS2",
+      "git://github.com/floridoo/vinyl-sourcemaps-apply",
+      "https://github.com/gulpjs/gulplog",
+      "https://github.com/gulpjs/has-gulplog",
+      "https://github.com/lodash/lodash",
+      "git://github.com/blakeembrey/make-error-cause",
+      "git://github.com/feross/safe-buffer",
+      "https://github.com/rvagg/through2"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 1133 times",
+      "[GOOD] Repository is being watched by 1133 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "bower",
+    "Name": "bower",
+    "URL": "https://api.github.com/repos/bower/bower",
+    "Dependencies": [
+      "git://github.com/IndigoUnited/node-p-throttler",
+      "http://github.com/substack/node-archy",
+      "https://github.com/bower/registry-client",
+      "git://github.com/isaacs/chmodr",
+      "git://github.com/tim-kos/node-retry",
+      "git://git.coolaj86.com/coolaj86/semver-utils.js",
+      "https://github.com/npm/fs-write-stream-atomic",
+      "https://github.com/npm/fstream",
+      "https://github.com/isaacs/node-graceful-fs",
+      "https://github.com/h2non/requireg",
+      "https://github.com/npm/node-semver",
+      "https://github.com/raszi/node-tmp",
+      "https://github.com/octokit/rest.js",
+      "https://github.com/npm/lockfile",
+      "git://github.com/mout/mout",
+      "git://github.com/isaacs/node-glob",
+      "https://github.com/sindresorhus/opn",
+      "ssh://git@github.com/moxystudio/node-promptly",
+      "https://github.com/sindresorhus/user-home",
+      "ssh://git@github.com/isaacs/abbrev-js",
+      "https://github.com/bower/json",
+      "https://github.com/chalk/chalk",
+      "https://github.com/js-cli/node-findup-sync",
+      "https://github.com/npm/nopt",
+      "git://github.com/kriskowal/q",
+      "git://github.com/browserify/resolve",
+      "git://github.com/bower/config",
+      "git://github.com/bower/logger",
+      "https://github.com/yeoman/configstore",
+      "https://github.com/sindresorhus/md5-hex",
+      "https://github.com/request/request",
+      "https://github.com/yeoman/stringify-object",
+      "https://github.com/yeoman/update-notifier",
+      "git://github.com/thlorenz/cardinal",
+      "https://github.com/bower/decompress-zip",
+      "https://github.com/sindresorhus/is-root",
+      "git://github.com/isaacs/node-lru-cache",
+      "git://github.com/isaacs/rimraf",
+      "ssh://git@github.com/substack/node-shell-quote",
+      "https://github.com/mafintosh/tar-fs",
+      "git://github.com/isaacs/node-which",
+      "git://github.com/bower/endpoint-parser",
+      "https://github.com/SBoudrias/Inquirer.js",
+      "https://github.com/sindresorhus/junk",
+      "https://github.com/substack/node-mkdirp",
+      "git://github.com/IndigoUnited/node-request-progress",
+      "https://github.com/stream-utils/destroy",
+      "git://github.com/isaacs/fstream-ignore",
+      "https://github.com/wycats/handlebars.js"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 15304 times",
+      "[GOOD] Repository is being watched by 15304 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "gulp-sourcemaps",
+    "Name": "gulp-sourcemaps",
+    "URL": "https://api.github.com/repos/gulp-sourcemaps/gulp-sourcemaps",
+    "Dependencies": [
+      "https://github.com/reworkcss/css",
+      "https://github.com/isaacs/node-graceful-fs",
+      "ssh://git@github.com/mozilla/source-map",
+      "https://github.com/jonschlinkert/strip-bom-string",
+      "https://github.com/rvagg/through2",
+      "https://github.com/gulp-sourcemaps/identity-map",
+      "https://github.com/gulp-sourcemaps/map-sources",
+      "https://github.com/acornjs/acorn",
+      "git://github.com/thlorenz/convert-source-map",
+      "http://www.github.com/nmccready/debug-fabulous",
+      "https://github.com/sindresorhus/detect-newline"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 970 times",
+      "[GOOD] Repository is being watched by 970 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "gulpjs",
+    "Name": "gulp",
+    "URL": "https://api.github.com/repos/gulpjs/gulp",
+    "Dependencies": [
+      "https://github.com/gulpjs/undertaker",
+      "https://github.com/gulpjs/vinyl-fs",
+      "https://github.com/gulpjs/glob-watcher",
+      "https://github.com/gulpjs/gulp-cli"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 29995 times",
+      "[GOOD] Repository is being watched by 29995 people"
+    ]
+  },
+  {
+    "Ownername": "dflynn15",
+    "Name": "gulp-jasmine-phantom",
+    "URL": "https://api.github.com/repos/dflynn15/gulp-jasmine-phantom",
+    "Dependencies": [
+      "https://github.com/lodash/lodash",
+      "https://github.com/rvagg/through2",
+      "git://github.com/isaacs/node-glob",
+      "https://github.com/gulpjs/gulp-util",
+      "https://github.com/wycats/handlebars.js",
+      "https://github.com/jasmine/jasmine-npm"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[MEDIUM] Repository does not have a license attached to it",
+      "[GOOD] Repository has been forked 26 times",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "govau",
+    "Name": "uikit",
+    "URL": "https://api.github.com/repos/govau/uikit",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 39 times",
+      "[GOOD] Repository has been stared 279 times",
+      "[GOOD] Repository is being watched by 279 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "alphagov",
+    "Name": "govuk_frontend_toolkit_npm",
+    "URL": "https://api.github.com/repos/alphagov/govuk_frontend_toolkit_npm",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "Marak",
+    "Name": "colors.js",
+    "URL": "https://api.github.com/repos/Marak/colors.js",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 3295 times",
+      "[GOOD] Repository is being watched by 3295 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "sasstools",
+    "Name": "gulp-sass-lint",
+    "URL": "https://api.github.com/repos/sasstools/gulp-sass-lint",
+    "Dependencies": [
+      "https://github.com/sasstools/sass-lint",
+      "https://github.com/rvagg/through2",
+      "https://github.com/gulpjs/plugin-error"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 39 times",
+      "[GOOD] Repository has been stared 108 times",
+      "[GOOD] Repository is being watched by 108 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "OverZealous",
+    "Name": "run-sequence",
+    "URL": "https://api.github.com/repos/OverZealous/run-sequence",
+    "Dependencies": [
+      "https://github.com/chalk/chalk",
+      "https://github.com/js-cli/fancy-log",
+      "https://github.com/gulpjs/plugin-error"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 55 times",
+      "[GOOD] Repository has been stared 969 times",
+      "[GOOD] Repository is being watched by 969 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "akoenig",
+    "Name": "gulp-svg2png",
+    "URL": "https://api.github.com/repos/akoenig/gulp-svg2png",
+    "Dependencies": [
+      "git://github.com/dominictarr/map-stream",
+      "git@github.com:parshap/map-stream-limit",
+      "https://github.com/domenic/svg2png",
+      "https://github.com/gulpjs/gulp-util"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 28 times",
+      "[GOOD] Repository has been stared 53 times",
+      "[GOOD] Repository is being watched by 53 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "govau",
+    "Name": "pancake",
+    "URL": "https://api.github.com/repos/govau/pancake",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been stared 68 times",
+      "[GOOD] Repository is being watched by 68 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "BlessCSS",
+    "Name": "gulp-bless",
+    "URL": "https://api.github.com/repos/BlessCSS/gulp-bless",
+    "Dependencies": [
+      "https://github.com/yeikos/js.merge",
+      "https://github.com/gulpjs/plugin-error",
+      "https://github.com/rvagg/through2",
+      "git://github.com/floridoo/concat-with-sourcemaps",
+      "https://github.com/js-cli/fancy-log",
+      "https://github.com/lodash/lodash",
+      "https://github.com/gulpjs/vinyl",
+      "git://github.com/floridoo/vinyl-sourcemaps-apply",
+      "https://github.com/blesscss/bless",
+      "https://github.com/lodash/lodash",
+      "https://github.com/lodash/lodash"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 18 times",
+      "[GOOD] Repository has been stared 51 times",
+      "[GOOD] Repository is being watched by 51 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "adamayres",
+    "Name": "gulp-filelog",
+    "URL": "https://api.github.com/repos/adamayres/gulp-filelog",
+    "Dependencies": [
+      "https://github.com/rvagg/through2",
+      "https://github.com/gulpjs/gulp-util"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[MEDIUM] Repository has not been updated for a year",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "sindresorhus",
+    "Name": "gulp-autoprefixer",
+    "URL": "https://api.github.com/repos/sindresorhus/gulp-autoprefixer",
+    "Dependencies": [
+      "git://github.com/floridoo/vinyl-sourcemaps-apply",
+      "https://github.com/postcss/autoprefixer",
+      "https://github.com/js-cli/fancy-log",
+      "https://github.com/gulpjs/plugin-error",
+      "https://github.com/postcss/postcss",
+      "https://github.com/rvagg/through2"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 37 times",
+      "[GOOD] Repository has been stared 621 times",
+      "[GOOD] Repository is being watched by 621 people"
+    ]
+  },
+  {
+    "Ownername": "wiledal",
+    "Name": "gulp-include",
+    "URL": "https://api.github.com/repos/wiledal/gulp-include",
+    "Dependencies": [
+      "git://github.com/dominictarr/event-stream",
+      "git://github.com/isaacs/node-glob",
+      "https://github.com/gulpjs/gulp-util",
+      "ssh://git@github.com/mozilla/source-map",
+      "https://github.com/sindresorhus/strip-bom",
+      "git://github.com/floridoo/vinyl-sourcemaps-apply"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[MEDIUM] Repository does not have a license attached to it",
+      "[GOOD] Repository has been forked 57 times",
+      "[GOOD] Repository has been stared 130 times",
+      "[GOOD] Repository is being watched by 130 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "dlmanning",
+    "Name": "gulp-sass",
+    "URL": "https://api.github.com/repos/dlmanning/gulp-sass",
+    "Dependencies": [
+      "https://github.com/gulpjs/plugin-error",
+      "https://github.com/gulpjs/replace-ext",
+      "https://github.com/chalk/strip-ansi",
+      "https://github.com/rvagg/through2",
+      "git://github.com/floridoo/vinyl-sourcemaps-apply",
+      "https://github.com/chalk/chalk",
+      "https://github.com/lodash/lodash",
+      "https://github.com/sass/node-sass"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 1314 times",
+      "[GOOD] Repository is being watched by 1314 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "sun-zheng-an",
+    "Name": "gulp-shell",
+    "URL": "https://api.github.com/repos/sun-zheng-an/gulp-shell",
+    "Dependencies": [
+      "https://github.com/js-cli/fancy-log",
+      "https://github.com/lodash/lodash",
+      "https://github.com/lodash/lodash",
+      "https://github.com/gulpjs/plugin-error",
+      "https://github.com/rvagg/through2",
+      "https://github.com/caolan/async",
+      "https://github.com/chalk/chalk"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 57 times",
+      "[GOOD] Repository has been stared 445 times",
+      "[GOOD] Repository is being watched by 445 people"
+    ]
+  },
+  {
+    "Ownername": "AusDTO",
+    "Name": "dto-digitalmarketplace-apiclient",
+    "URL": "https://api.github.com/repos/AusDTO/dto-digitalmarketplace-apiclient",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[MEDIUM] This repository was forked from alphagov/digitalmarketplace-apiclient",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "AusDTO",
+    "Name": "dto-digitalmarketplace-utils",
+    "URL": "https://api.github.com/repos/AusDTO/dto-digitalmarketplace-utils",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[MEDIUM] This repository was forked from alphagov/digitalmarketplace-utils",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "Medium",
+    "Name": "phantomjs",
+    "URL": "https://api.github.com/repos/Medium/phantomjs",
+    "Dependencies": [
+      "git://github.com/stefanpenner/es6-promise",
+      "https://github.com/maxogden/extract-zip",
+      "https://github.com/Medium/kew",
+      "git://github.com/visionmedia/node-progress",
+      "https://github.com/request/request",
+      "https://github.com/jprichardson/node-fs-extra",
+      "https://github.com/sindresorhus/hasha",
+      "git://github.com/IndigoUnited/node-request-progress",
+      "git://github.com/isaacs/node-which"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 1284 times",
+      "[GOOD] Repository is being watched by 1284 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "ActiveState",
+    "Name": "appdirs",
+    "URL": "https://api.github.com/repos/ActiveState/appdirs",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 45 times",
+      "[GOOD] Repository has been stared 334 times",
+      "[GOOD] Repository is being watched by 334 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "neithere",
+    "Name": "argh",
+    "URL": "https://api.github.com/repos/neithere/argh",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 34 times",
+      "[GOOD] Repository has been stared 187 times",
+      "[GOOD] Repository is being watched by 187 people"
+    ]
+  },
+  {
+    "Ownername": "AusDTO",
+    "Name": "dto-digitalmarketplace-content-loader",
+    "URL": "https://api.github.com/repos/AusDTO/dto-digitalmarketplace-content-loader",
+    "Dependencies": [
+      "github.com/jpvanhal/inflection",
+      "github.com/testing-cabal/mock",
+      "github.com/PyCQA/pep8",
+      "github.com/pytest-dev/py",
+      "github.com/pytest-dev/pytest",
+      "github.com/pytest-dev/pytest-cov",
+      "github.com/z4r/python-coveralls",
+      "github.com/requests/requests",
+      "github.com/benjaminp/six",
+      "github.com/pallets/werkzeug"
+    ],
+    "Dependenciesproblems": [
+      {
+        "Name": "coverage",
+        "URL": "https://pypi.org/project/coverage",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "funcsigs",
+        "URL": "https://pypi.org/project/funcsigs",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "pbr",
+        "URL": "https://pypi.org/project/pbr",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "pytest-sugar",
+        "URL": "https://pypi.org/project/pytest-sugar",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "PyYAML",
+        "URL": "https://pypi.org/project/PyYAML",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "termcolor",
+        "URL": "https://pypi.org/project/termcolor",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      }
+    ],
+    "RiskNotes": [
+      "[MEDIUM] This repository was forked from alphagov/digitalmarketplace-content-loader",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "litl",
+    "Name": "backoff",
+    "URL": "https://api.github.com/repos/litl/backoff",
+    "Dependencies": [
+      "gitlab.com/pycqa/flake8",
+      "github.com/PyCQA/pep8",
+      "github.com/pytest-dev/pytest",
+      "github.com/pytest-dev/pytest-cov",
+      "github.com/pytest-dev/pytest-asyncio"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 43 times",
+      "[GOOD] Repository has been stared 797 times",
+      "[GOOD] Repository is being watched by 797 people"
+    ]
+  },
+  {
+    "Ownername": "boto",
+    "Name": "boto",
+    "URL": "https://api.github.com/repos/boto/boto",
+    "Dependencies": [
+      "github.com/requests/requests",
+      "github.com/simplejson/simplejson",
+      "github.com/repos/ThomasWaldmann/argparse",
+      "github.com/repos/paramiko/paramiko",
+      "github.com/testing-cabal/mock"
+    ],
+    "Dependenciesproblems": [
+      {
+        "Name": "nose",
+        "URL": "https://pypi.org/project/nose",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "rsa",
+        "URL": "https://pypi.org/project/rsa",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "httpretty",
+        "URL": "https://pypi.org/project/httpretty",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "PyYAML",
+        "URL": "https://pypi.org/project/PyYAML",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "coverage",
+        "URL": "https://pypi.org/project/coverage",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      }
+    ],
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 6154 times",
+      "[GOOD] Repository is being watched by 6154 people"
+    ]
+  },
+  {
+    "Ownername": "pallets",
+    "Name": "click",
+    "URL": "https://api.github.com/repos/pallets/click",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 6059 times",
+      "[GOOD] Repository is being watched by 6059 people"
+    ]
+  },
+  {
+    "Ownername": "boto",
+    "Name": "boto3",
+    "URL": "https://api.github.com/repos/boto/boto3",
+    "Dependencies": [
+      "github.com/testing-cabal/mock",
+      "github.com/pypa/wheel"
+    ],
+    "Dependenciesproblems": [
+      {
+        "Name": "nose",
+        "URL": "https://pypi.org/project/nose",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "unittest2",
+        "URL": "https://pypi.org/project/unittest2",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      }
+    ],
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 3555 times",
+      "[GOOD] Repository is being watched by 3555 people"
+    ]
+  },
+  {
+    "Ownername": "pyca",
+    "Name": "cryptography",
+    "URL": "https://api.github.com/repos/pyca/cryptography",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 2232 times",
+      "[GOOD] Repository is being watched by 2232 people"
+    ]
+  },
+  {
+    "Ownername": "boto",
+    "Name": "botocore",
+    "URL": "https://api.github.com/repos/boto/botocore",
+    "Dependencies": [
+      "github.com/tox-dev/tox",
+      "github.com/testing-cabal/mock",
+      "github.com/pypa/wheel",
+      "github.com/behave/behave",
+      "github.com/Julian/jsonschema"
+    ],
+    "Dependenciesproblems": [
+      {
+        "Name": "python-dateutil",
+        "URL": "https://pypi.org/project/python-dateutil",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "python-dateutil",
+        "URL": "https://pypi.org/project/python-dateutil",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "nose",
+        "URL": "https://pypi.org/project/nose",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "docutils",
+        "URL": "https://pypi.org/project/docutils",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      }
+    ],
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 492 times",
+      "[GOOD] Repository is being watched by 492 people"
+    ]
+  },
+  {
+    "Ownername": "scrapy",
+    "Name": "cssselect",
+    "URL": "https://api.github.com/repos/scrapy/cssselect",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 38 times",
+      "[GOOD] Repository has been stared 180 times",
+      "[GOOD] Repository is being watched by 180 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "pallets",
+    "Name": "flask",
+    "URL": "https://api.github.com/repos/pallets/flask",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 37726 times",
+      "[GOOD] Repository is being watched by 37726 people"
+    ]
+  },
+  {
+    "Ownername": "thadeusb",
+    "Name": "flask-cache",
+    "URL": "https://api.github.com/repos/thadeusb/flask-cache",
+    "Dependencies": [
+      "git://github.com/mitsuhiko/werkzeug",
+      "git://github.com/mitsuhiko/flask"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 593 times",
+      "[GOOD] Repository is being watched by 593 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "smurfix",
+    "Name": "flask-script",
+    "URL": "https://api.github.com/repos/smurfix/flask-script",
+    "Dependencies": [
+      "github.com/pallets/flask"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 620 times",
+      "[GOOD] Repository is being watched by 620 people"
+    ]
+  },
+  {
+    "Ownername": "maxcountryman",
+    "Name": "flask-login",
+    "URL": "https://api.github.com/repos/maxcountryman/flask-login",
+    "Dependencies": [
+      "github.com/pallets/flask",
+      "github.com/pallets/werkzeug"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 1809 times",
+      "[GOOD] Repository is being watched by 1809 people"
+    ]
+  },
+  {
+    "Ownername": "spulec",
+    "Name": "freezegun",
+    "URL": "https://api.github.com/repos/spulec/freezegun",
+    "Dependencies": [
+      "github.com/testing-cabal/mock"
+    ],
+    "Dependenciesproblems": [
+      {
+        "Name": "coverage",
+        "URL": "https://pypi.org/project/coverage",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "coveralls",
+        "URL": "https://pypi.org/project/coveralls",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      },
+      {
+        "Name": "nose",
+        "URL": "https://pypi.org/project/nose",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      }
+    ],
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 1565 times",
+      "[GOOD] Repository is being watched by 1565 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "kjd",
+    "Name": "idna",
+    "URL": "https://api.github.com/repos/kjd/idna",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 25 times",
+      "[GOOD] Repository has been stared 68 times",
+      "[GOOD] Repository is being watched by 68 people"
+    ]
+  },
+  {
+    "Ownername": "phihag",
+    "Name": "ipaddress",
+    "URL": "https://api.github.com/repos/phihag/ipaddress",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 25 times",
+      "[GOOD] Repository has been stared 59 times",
+      "[GOOD] Repository is being watched by 59 people"
+    ]
+  },
+  {
+    "Ownername": "jpvanhal",
+    "Name": "inflection",
+    "URL": "https://api.github.com/repos/jpvanhal/inflection",
+    "Dependencies": [
+      "gitlab.com/pycqa/flake8",
+      "github.com/timothycrosley/isort",
+      "github.com/pytest-dev/pytest"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 33 times",
+      "[GOOD] Repository has been stared 188 times",
+      "[GOOD] Repository is being watched by 188 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "pallets",
+    "Name": "itsdangerous",
+    "URL": "https://api.github.com/repos/pallets/itsdangerous",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 1472 times",
+      "[GOOD] Repository is being watched by 1472 people"
+    ]
+  },
+  {
+    "Ownername": "pallets",
+    "Name": "markupsafe",
+    "URL": "https://api.github.com/repos/pallets/markupsafe",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 64 times",
+      "[GOOD] Repository has been stared 217 times",
+      "[GOOD] Repository is being watched by 217 people"
+    ]
+  },
+  {
+    "Ownername": "lxml",
+    "Name": "lxml",
+    "URL": "https://api.github.com/repos/lxml/lxml",
+    "Dependencies": null,
+    "Dependenciesproblems": [
+      {
+        "Name": "Cython",
+        "URL": "https://pypi.org/project/Cython",
+        "RiskNotes": [
+          "[MEDIUM] Pypi page does not have any reference to a repository"
+        ]
+      }
+    ],
+    "RiskNotes": [
+      "[MEDIUM] Repository does not have a license attached to it",
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 1262 times",
+      "[GOOD] Repository is being watched by 1262 people"
+    ]
+  },
+  {
+    "Ownername": "atdt",
+    "Name": "monotonic",
+    "URL": "https://api.github.com/repos/atdt/monotonic",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 16 times",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "gorakhargosh",
+    "Name": "pathtools",
+    "URL": "https://api.github.com/repos/gorakhargosh/pathtools",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[MEDIUM] Repository has not been updated for a year",
+      "[GOOD] Repository has been forked 19 times",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "pypa",
+    "Name": "packaging",
+    "URL": "https://api.github.com/repos/pypa/packaging",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 55 times",
+      "[GOOD] Repository has been stared 76 times",
+      "[GOOD] Repository is being watched by 76 people"
+    ]
+  },
+  {
+    "Ownername": "pytest-dev",
+    "Name": "py",
+    "URL": "https://api.github.com/repos/pytest-dev/py",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 27 times",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "PyCQA",
+    "Name": "pycodestyle",
+    "URL": "https://api.github.com/repos/PyCQA/pycodestyle",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 3359 times",
+      "[GOOD] Repository is being watched by 3359 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "etingof",
+    "Name": "pyasn1",
+    "URL": "https://api.github.com/repos/etingof/pyasn1",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 43 times",
+      "[GOOD] Repository has been stared 82 times",
+      "[GOOD] Repository is being watched by 82 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "eliben",
+    "Name": "pycparser",
+    "URL": "https://api.github.com/repos/eliben/pycparser",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 1367 times",
+      "[GOOD] Repository is being watched by 1367 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "madzak",
+    "Name": "python-json-logger",
+    "URL": "https://api.github.com/repos/madzak/python-json-logger",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 79 times",
+      "[GOOD] Repository has been stared 380 times",
+      "[GOOD] Repository is being watched by 380 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "stub42",
+    "Name": "pytz",
+    "URL": "https://api.github.com/repos/stub42/pytz",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[MEDIUM] Repository does not have a license attached to it",
+      "[GOOD] Repository has been forked 20 times",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "sdispater",
+    "Name": "pytzdata",
+    "URL": "https://api.github.com/repos/sdispater/pytzdata",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[MEDIUM] Size of collaborator for the repository is 2 which is less than 3",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "requests",
+    "Name": "requests",
+    "URL": "https://api.github.com/repos/requests/requests",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 33810 times",
+      "[GOOD] Repository is being watched by 33810 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "boto",
+    "Name": "s3transfer",
+    "URL": "https://api.github.com/repos/boto/s3transfer",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 34 times",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "benjaminp",
+    "Name": "six",
+    "URL": "https://api.github.com/repos/benjaminp/six",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 79 times",
+      "[GOOD] Repository has been stared 351 times",
+      "[GOOD] Repository is being watched by 351 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "regebro",
+    "Name": "tzlocal",
+    "URL": "https://api.github.com/repos/regebro/tzlocal",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 37 times",
+      "[GOOD] Repository has been stared 75 times",
+      "[GOOD] Repository is being watched by 75 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "Pylons",
+    "Name": "waitress",
+    "URL": "https://api.github.com/repos/Pylons/waitress",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 75 times",
+      "[GOOD] Repository has been stared 427 times",
+      "[GOOD] Repository is being watched by 427 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "gorakhargosh",
+    "Name": "watchdog",
+    "URL": "https://api.github.com/repos/gorakhargosh/watchdog",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 3058 times",
+      "[GOOD] Repository is being watched by 3058 people",
+      "[GOOD] Repository has a wiki"
+    ]
+  },
+  {
+    "Ownername": "pallets",
+    "Name": "werkzeug",
+    "URL": "https://api.github.com/repos/pallets/werkzeug",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 4149 times",
+      "[GOOD] Repository is being watched by 4149 people"
+    ]
+  },
+  {
+    "Ownername": "wtforms",
+    "Name": "wtforms",
+    "URL": "https://api.github.com/repos/wtforms/wtforms",
+    "Dependencies": null,
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[GOOD] Repository has been forked 100 times",
+      "[GOOD] Repository has been stared 826 times",
+      "[GOOD] Repository is being watched by 826 people"
+    ]
+  },
+  {
+    "Ownername": "ogt",
+    "Name": "workdays",
+    "URL": "https://api.github.com/repos/ogt/workdays",
+    "Dependencies": [
+      "github.com/pytest-dev/py",
+      "github.com/pytest-dev/pytest"
+    ],
+    "Dependenciesproblems": null,
+    "RiskNotes": [
+      "[INFO] Repository is not managed under an organisation",
+      "[MEDIUM] Repository has not been updated for a year",
+      "[GOOD] Repository has been forked 14 times",
+      "[GOOD] Repository has a wiki"
+    ]
+  }
+]

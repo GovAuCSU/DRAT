@@ -39,11 +39,12 @@ func ScoreGitHubRepo(logger *log.Logger, qc *cque.Client, j *cque.Job, appconfig
 
 // ScoreGitHubRepoFuncResult is the type of result that would return from our ScoreGithubRepo function.
 type ScoreGitHubRepoFuncResult struct {
-	Ownername    string
-	Name         string
-	URL          string
-	Dependencies []string
-	RiskNotes    []string
+	Ownername                 string
+	Name                      string
+	URL                       string
+	Dependencies              []string
+	DependenciesCrawlProblems []crawl.Dependencyproblem
+	RiskNotes                 []string
 }
 
 // For every result type, we will need to implement String() method to satisfy our Result interface.
@@ -78,19 +79,22 @@ func ScoreGitHubRepoFunc(logger *log.Logger, qc *cque.Client, j *cque.Job, appco
 	}
 
 	sr := ScoreGitHubRepoFuncResult{
-		Ownername:    *rs.R.Owner.Login,
-		Name:         *rs.R.Name,
-		URL:          *rs.R.URL,
-		Dependencies: []string{},
-		RiskNotes:    rs.RiskNote,
+		Ownername: *rs.R.Owner.Login,
+		Name:      *rs.R.Name,
+		URL:       *rs.R.URL,
+		DependenciesCrawlProblems: []crawl.Dependencyproblem{},
+		Dependencies:              []string{},
+		RiskNotes:                 rs.RiskNote,
 	}
 
-	lst := crawl.GithubDependencyCrawl(logger, c, repo, appconfig)
+	lst, dependenciesproblems := crawl.GithubDependencyCrawl(logger, c, repo, appconfig)
+	sr.DependenciesCrawlProblems = dependenciesproblems
 	sr.Dependencies = lst
 	qc.Result <- cque.Result{
 		JobType: j.Type,
 		Result:  sr,
 	}
+
 	for _, v := range lst {
 		if strings.Contains(v, "github.com") {
 			logger.Printf("[INFO] Queue scoring job for \"%s\" found in repo %s/%s\n", v, *repo.Owner.Login, *repo.Name)

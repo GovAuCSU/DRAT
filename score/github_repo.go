@@ -92,6 +92,10 @@ func (rs *GithubRepositoryScore) Score(ctx context.Context) error {
 		rs.RiskNote = append(rs.RiskNote, fmt.Sprintf("[MEDIUM] Repository does not have a license attached to it"))
 	}
 
+	if *rs.R.Fork {
+		rs.RiskNote = append(rs.RiskNote, fmt.Sprintf("[MEDIUM] This repository was forked from %s", *rs.R.Parent.FullName))
+	}
+
 	forks, _, err := rs.c.Repositories.ListForks(ctx, *rs.R.Owner.Login, *rs.R.Name, &github.RepositoryListForksOptions{ListOptions: github.ListOptions{PerPage: 100}})
 	if err != nil {
 		return err

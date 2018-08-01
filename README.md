@@ -81,7 +81,7 @@ Here is an example of the app's output:
 ]
 ```
 
-This app currently support 3 types of crawler plugins for github projects: NPM, go-dep and ruby-gem
+This app currently support 3 types of crawler plugins for github projects: NPM, go-dep, pip  and ruby-gem
 
 ## DRAT Webapp
 Development for this app is currently on hold in favour of the drat-cli tool.

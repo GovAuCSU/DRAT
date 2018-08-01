@@ -25,14 +25,14 @@ type npminfo struct {
 	} `json:"repository"`
 }
 
-func ParseNPM(contentbytes []byte) []string {
+func ParseNPM(contentbytes []byte) ([]string, []Dependencyproblem) {
 	var retlst []string
 	var pjfile packagejsonfile
 	err := json.Unmarshal(contentbytes, &pjfile)
 	if err != nil {
 		// Return empty list if we get an error here
 		log.Printf("[ERROR] Could not parse content of a package.json file")
-		return retlst
+		return nil, nil
 	}
 	for name, _ := range pjfile.Dependencies {
 		resp, err := http.Get(fmt.Sprintf("%s/%s/", NPMregistryURL, name))
@@ -59,5 +59,5 @@ func ParseNPM(contentbytes []byte) []string {
 		}
 
 	}
-	return retlst
+	return retlst, nil
 }

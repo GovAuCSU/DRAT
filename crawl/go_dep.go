@@ -4,7 +4,7 @@ import (
 	"regexp"
 )
 
-func ParseGoDep(contentbytes []byte) []string {
+func ParseGoDep(contentbytes []byte) ([]string, []Dependencyproblem) {
 	gopkgfile := string(contentbytes)
 	// Matching something like `name = "github.com/beorn7/perks"`
 	rex := regexp.MustCompile(`name = \"([^\"]+/[^\"]+/[^\"]+)\"`)
@@ -15,5 +15,5 @@ func ParseGoDep(contentbytes []byte) []string {
 		// construct our return list
 		retlst = append(retlst, i[1])
 	}
-	return retlst
+	return retlst, nil
 }
