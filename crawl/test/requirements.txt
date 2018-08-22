@@ -1,4 +1,5 @@
-	django>=1.11.0,<2.0.0
+## Trying various spacing, include 	
+    django>=1.11.0,<2.0.0
 	django-axes>=4.0.0
 	pytz
 	logstash_formatter   >= 0.5.16

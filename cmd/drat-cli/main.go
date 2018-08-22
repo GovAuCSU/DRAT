@@ -37,6 +37,9 @@ func main() {
 	config["gitauthtoken"] = *gitauthtoken
 	// config["sqlitedbpath"] = *sqlitedbpath
 
+	if (*file == "") && (*repo == "") {
+		kingpin.FatalUsage("You need to use this tool against at least one repository")
+	}
 	// Configuring our log level
 	logfilter := "WARNING"
 	if *verbose {

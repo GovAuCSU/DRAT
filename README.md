@@ -2,14 +2,28 @@
 
 DRAT aims to provide risk indicator for libraries used by the developer within an organisation.
 
+## Known problems:
+
+ - Duplicate results
+ - No caching for previous results 
+ - Difficult to map relationships between result entries
+ - Rate limiting force the use of personal token
+
 
 ## DRAT-cli
 The app can be found under cmd/drat-cli. 
 
-To run the app, you will need a github auth token to overcome the rate limit for github api. This token can be generated [here](https://github.com/settings/tokens). 
+To run the app, you will need a github auth token to overcome the rate limit for github api. This token can be generated [here](https://github.com/settings/tokens). Unless you need private repository access for your project, a token without any permission should work fine.
 
 To check out how it works, you can try running it with the following commands
 
+To get a report for a single repository:
+```bash
+cd cmd/drat-cli
+go run main.go -d 2 -v -r "https://github.com/AusDTO/dto-digitalmarketplace-supplier-frontend"
+```
+
+To get a report for a list of repository:
 ```bash
 cd cmd/drat-cli
 go run main.go -d 5 -v -f examplelist.lst
@@ -86,6 +100,7 @@ Here is an example of the app's output:
 ```
 
 This app currently support 3 types of crawler plugins for github projects: NPM, go-dep, pip  and ruby-gem
+
 
 ## DRAT Webapp
 Development for this app is currently on hold in favour of the drat-cli tool.
