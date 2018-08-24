@@ -11,6 +11,7 @@ import (
 
 type RepoJob struct {
 	Fullname     string
+	DependedOnBy string
 	Currentdepth int
 }
 

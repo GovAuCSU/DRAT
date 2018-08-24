@@ -2,6 +2,7 @@ package jobs
 
 import (
 	"context"
+	"crypto/md5"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -39,12 +40,14 @@ func ScoreGitHubRepo(logger *log.Logger, qc *cque.Client, j *cque.Job, appconfig
 
 // ScoreGitHubRepoFuncResult is the type of result that would return from our ScoreGithubRepo function.
 type ScoreGitHubRepoFuncResult struct {
+	ID                        string
+	DependedOnBy              string
 	Ownername                 string
 	Name                      string
 	URL                       string
 	Dependencies              []string
 	DependenciesCrawlProblems []crawl.Dependencyproblem
-	RiskNotes                 []string
+	RiskNotes                 map[string][]string
 }
 
 // For every result type, we will need to implement String() method to satisfy our Result interface.
@@ -61,6 +64,9 @@ func ScoreGitHubRepoFunc(logger *log.Logger, qc *cque.Client, j *cque.Job, appco
 	repofullurlparts := strings.Split(repojob.Fullname, "/")
 	reponame := repofullurlparts[len(repofullurlparts)-1]
 	owner := repofullurlparts[len(repofullurlparts)-2]
+	h := md5.New()
+	h.Write([]byte(fmt.Sprintf("%s/%s", owner, reponame)))
+	id := fmt.Sprintf("%x", h.Sum(nil))
 	c, err := GetConn(appconfig)
 	if err != nil {
 		return err
@@ -79,9 +85,11 @@ func ScoreGitHubRepoFunc(logger *log.Logger, qc *cque.Client, j *cque.Job, appco
 	}
 
 	sr := ScoreGitHubRepoFuncResult{
-		Ownername: *rs.R.Owner.Login,
-		Name:      *rs.R.Name,
-		URL:       *rs.R.URL,
+		ID:           id,
+		DependedOnBy: repojob.DependedOnBy,
+		Ownername:    *rs.R.Owner.Login,
+		Name:         *rs.R.Name,
+		URL:          *rs.R.URL,
 		DependenciesCrawlProblems: []crawl.Dependencyproblem{},
 		Dependencies:              []string{},
 		RiskNotes:                 rs.RiskNote,
@@ -100,7 +108,7 @@ func ScoreGitHubRepoFunc(logger *log.Logger, qc *cque.Client, j *cque.Job, appco
 			logger.Printf("[INFO] Queue scoring job for \"%s\" found in repo %s/%s\n", v, *repo.Owner.Login, *repo.Name)
 			qc.Enqueue(cque.Job{
 				Type: KeyScoreGitHubRepo,
-				Args: RepoJob{Fullname: v, Currentdepth: repojob.Currentdepth + 1},
+				Args: RepoJob{Fullname: v, DependedOnBy: id, Currentdepth: repojob.Currentdepth + 1},
 			})
 			continue
 		}

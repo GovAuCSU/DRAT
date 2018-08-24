@@ -19,6 +19,7 @@ var (
 	repo         = kingpin.Flag("repo", "Name of repo in the following format: (github.com/(username|org)/repo").Default("").Short('r').String()
 	file         = kingpin.Flag("file", "File contains the list of urls to repositories seperated by newlines").Default("").Short('f').String()
 	gitauthtoken = kingpin.Flag("gitauth", "Github Authentication token").Default("").OverrideDefaultFromEnvar("GITHUB_AUTH_TOKEN").String()
+	outtofile    = kingpin.Flag("output", "If specified, write output to this file").Default("").Short('o').String()
 	depth        = kingpin.Flag("depth", "How deep do we want to crawl the dependencies").Default("5").Short('d').Int()
 	// sqlitedbpath = kingpin.Flag("sqlpath", "Local sqlite cache location. Default is ~/.drat.sqlite").Default("~/.drat.sqlite").Short('s').String()
 )
@@ -80,7 +81,7 @@ func main() {
 	if *repo != "" {
 		qc.Enqueue(cque.Job{
 			Type: jobs.KeyScoreGitHubRepo,
-			Args: jobs.RepoJob{Fullname: *repo, Currentdepth: 0},
+			Args: jobs.RepoJob{Fullname: *repo, DependedOnBy: "", Currentdepth: 0},
 		})
 	}
 
@@ -108,7 +109,19 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(string(b))
+	if *outtofile != "" {
+		f, err := os.OpenFile(*outtofile, os.O_APPEND|os.O_CREATE|os.O_RDWR, 0666)
+		if err != nil {
+			fmt.Println(string(b))
+			fmt.Printf("Having issue with opening file %s. The result is printed to stdout \n", *outtofile)
+			log.Fatal(err)
+		}
+		f.Write(b)
+	} else {
+		// If we don't specify a file output, dump it to stdout
+		fmt.Println(string(b))
+	}
+
 }
 
 // TODO: Find home for result handler. :)

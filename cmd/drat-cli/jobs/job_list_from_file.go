@@ -22,7 +22,7 @@ func ListFromFile(logger *log.Logger, qc *cque.Client, j *cque.Job, config map[s
 		if strings.Contains(v, "github.com") {
 			qc.Enqueue(cque.Job{
 				Type: KeyScoreGitHubRepo,
-				Args: RepoJob{Fullname: v, Currentdepth: 0},
+				Args: RepoJob{Fullname: v, DependedOnBy: "", Currentdepth: 0},
 			})
 			continue
 		}
