@@ -2,6 +2,12 @@
 
 DRAT aims to provide risk indicator for libraries used by the developer within an organisation.
 
+Below is what the result looks like after running against a python project. Note that these are just potential risks associate with these dependencies being identified and not actually vulnerabilities.
+
+![drat-cli gui image](https://github.com/GovAuCSU/DRAT/raw/master/images/drat_cli_gui.png)
+
+
+
 ## Known problems:
 
  - Duplicate results
@@ -26,10 +32,10 @@ go run main.go -d 2 -v -r "https://github.com/AusDTO/dto-digitalmarketplace-supp
 To get a report for a list of repository:
 ```bash
 cd cmd/drat-cli
-go run main.go -d 5 -v -f examplelist.lst
+go run main.go -d 5 -v -f examplelist.lst -o output.json
 ```
 
-Here is an example of the app's output:
+Below is an example of the app's output. You can then open `cmd/drat-cli/static/index.html` in a browser and drag&drop `output.json` into the site to visualise the output and navigate around.
 
 ```json
 [
